@@ -1,0 +1,31 @@
+@media (max-width: 768px)
+    nav
+        position: inherit
+    .choice
+        &_car
+            img
+                width: 559px
+    .hamburger
+        display: block
+        position: absolute
+        right: 50px
+        top: 50%
+        transform: translateY(-50%)
+        width: 26px
+        height: 12px
+        span
+            display: block
+            height: 2px
+            width: 100%
+            background-color: #fff
+            margin-bottom: 2px
+            transition: 0.5s all
+        &_active
+            span
+                margin-bottom: -2px
+                &:nth-child(1)
+                    transform: rotate(-45deg)
+                &:nth-child(2)
+                    display: none
+                &:nth-child(3)
+                    transform: rotate(45deg)

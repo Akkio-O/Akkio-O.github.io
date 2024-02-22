@@ -1,0 +1,360 @@
+
+@mixin title
+	color: rgb(34, 34, 34)
+	font-family: Roboto-Bold
+	font-size: 38px
+
+@mixin main_btn
+	width: 182px
+	height: 56px
+	box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12)
+	border: none
+	background-image: linear-gradient(to top, #1eacc7 0%, #4ce2ff 100%)
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.21)
+	color: #ffffff
+	background-color: rgb(71, 221, 249)
+	border-radius: 0.5svh
+	font-family: Roboto-Regular
+	font-size: 0.8rem
+	text-transform: uppercase
+
+@mixin btn
+	width: 112px
+	height: 24px
+	background: rgb(0, 0, 0)
+	color: #fff
+	font-size: 11px
+	margin: 71px 0 38px 0
+
+=btn_hover
+	&:hover
+		background-image: none
+		background-color: #1eacc7
+
+*
+	box-sizing: border-box
+	font-family: 'Roboto', sans-serif
+
+header
+	position: relative
+
+nav
+	position: fixed
+	z-index: 1
+	width: 100%
+	height: 51px
+	background: rgb(33, 33, 33)
+
+.hamburger
+	display: none
+
+.menu
+	display: flex
+	justify-content: space-between
+	list-style-type: none
+	padding: 13px 70px
+	.menu_items
+		border-right: 2px #0f0e0e dotted
+		padding-right: 1.5vw
+		height: 30px
+		&:last-child
+			border-right: none
+		.menu_link
+			font-size: 15px
+
+a
+	text-decoration: none
+	color: rgb(255, 255, 255)
+
+.subheader
+	position: absolute
+	margin-top: 3.8svh
+	width: 100%
+	height: 84px
+	background: rgb(0, 0, 0, .6)
+	color: rgb(255, 255, 255)
+	.subheader_logo
+		display: block
+		max-width: 100%
+		font-size: 26px
+		margin-top: 1svh
+		img
+			margin: 0 0.5svw 1svh 0
+	.subheader_official
+		margin-top: 0.1svh
+		font-size: 1rem
+		opacity: 0.5
+
+	.subheader_call
+		margin-top: 1svh
+		font-family: Roboto-Regular
+		font-size: 1rem
+
+	.subheader_phone
+		font-family: Roboto-Light
+		font-size: 1.5rem
+
+	.subheader_btn
+		margin-top: 1svh
+		@include main_btn
+		+btn_hover
+
+.promo
+	color: rgb(255, 255, 255)
+	min-height: 800px
+	background: url('../img/img_main.png') center center / cover no-repeat
+	width: 100%
+	padding: 150px 0 135px 0
+	text-align: center
+	&_header
+		font-size: 60px
+	&_subheader
+		font-size: 36px
+	&_descr
+		font-size: 18px
+	&_btn
+		margin-top: 6svh
+		@include main_btn
+		+btn_hover
+
+.reasons
+	color: black
+	text-align: center
+	&_btn
+		@include btn
+	&_title
+		@include title
+	&_block
+		margin: 40px 0 35px 0
+		text-align: justify
+		gap: 1svw
+		.reasons_round
+			background-color: #1EACC7
+			border-radius: 100%
+			width: 113px
+			height: 113px
+			display: flex
+			justify-content: center
+			align-items: center
+			margin: 0 auto
+		.reasons_descr
+			.reasons_subtitle
+				font-size: 17px
+				color: #1EACC7
+			.reasons_text
+				font-size: 15px
+
+.mob_app
+	background: url('../img/mobile_bg.png') center (center / cover) no-repeat
+	text-align: center
+	.mob_btn
+		@include btn
+	.mob_title
+		@include title
+		span
+			font-size: 17px
+			font-family: Roboto-Regular
+			font-size: 17px
+			font-weight: 400
+	.mob_block
+		position: relative
+		display: flex
+		justify-content: center
+		align-items: center
+		img
+			margin: 19px 0 19px 0
+		.mob_content
+			position: absolute
+			.mob_descr
+				height: 66px
+				display: flex
+				align-items: center
+				justify-content: center
+				width: 278.67px
+				margin: 31px 0 25px 0
+				color: rgb(255, 255, 255)
+				font-family: Segoe UI
+				font-size: 24px
+				font-weight: 400
+			.mob_plus
+				margin: 0 auto
+				margin-top: 80px
+				font-size: 20px
+				color: #1EACC7
+				background-color: #000000
+				width: 30px
+				height: 30px
+				border-radius: 100%
+				cursor: pointer
+				&::before, &::after
+					content: ''
+					position: absolute
+					background-color: #1EACC7
+					left: 50%
+					top: 92.5%
+					transform: translate(-50%, -50%)
+					transition: 0.3s all
+
+				&::before
+					width: 14px
+					height: 2px
+
+				&::after
+					width: 2px
+					height: 14px
+
+					&:hover
+						&:before, &::after
+							background-color: #ff5656
+.choice
+	position: relative
+	background: url('../img/bg_choice_car.png') center (center / cover) no-repeat
+	height: 551px
+	text-align: center
+	&_btn
+		@include btn
+		background: #fff
+		color: #232222
+	&_title
+		@include title
+		font-family: Roboto-Bold
+		font-size: 38px
+		color: #fff
+		span
+			display: block
+			font-size: 17px
+			font-family: Roboto-Regular
+			margin-bottom: 56px
+	&_car
+		transform: translate(0%,45%)
+.carsharing
+	text-align: center
+	height: 397px
+	background: url('../img/mobile_bg.png')center (center / cover) no-repeat
+	h4
+		color: rgb(34, 34, 34)
+		font-family: Segoe UI
+		font-size: 17px
+		font-weight: 400
+		padding: 217px 0 138px 0
+
+.terms_Conditions
+	text-align: center
+	&_btn
+		@include btn
+	&_title
+		@include title
+		margin-bottom: 2svh
+	&_text
+		text-align: justify
+		color: #1CA8C3
+		h3
+			font-size: 22px
+		ul
+			list-style-type: none
+			li
+				font-size: 17px
+				color: #222222
+				line-height: 2.5lvh
+				.icon_blue, .icon_red
+					display: inline-block
+					height: 21px
+					width: 30px
+				span
+					color: #3ab4cb
+	&_text_blue
+		.icon_blue
+			background: url('../img/check-icon-blue.png') no-repeat
+	&_text_red
+		.icon_red
+			background: url('../img/check-icon-red.png') no-repeat
+
+.map
+	position: relative
+	height: 717px
+	background: #080810
+	text-align: center
+	.map_block
+		background: url('../img/map_info_world.png')
+		height: 717px
+		img
+			position: absolute
+			height: 717px
+		.map_btn
+			@include btn
+			background: #fff
+			color: #232222
+		.map_title
+			@include title
+			font-family: Roboto-Bold
+			font-size: 38px
+			color: #fff
+			span
+				font-family: Roboto-Regular
+				font-size: 17px
+				font-weight: 400
+		.btn
+			margin: 454px 0 49px 0
+			background-color: rgba(255, 255, 255, 0)
+			border-style: none
+			color: rgb(31, 186, 214)
+			font-family: Roboto-Regular
+			font-size: 15px
+			font-weight: 400
+.finish
+	text-align: center
+	&_social
+		display: flex
+		gap: 1vw
+		margin: 51px 0 73px 23px
+		&_item
+			display: flex
+			justify-content: center
+			align-items: center
+			color: #fff
+			background-color: #000000
+			width: 35px
+			height: 35px
+			border-radius: 100%
+		i
+			display: block
+			padding: 7px 11px 7px 12px
+
+	&_line
+		background-color: rgb(31, 186, 214)
+		margin: 0 auto
+		margin-top: 14px
+		margin-bottom: 32px
+		height: 4px
+		width: 299px
+
+	&_text
+		&_main
+			display: flex
+			gap: 2vw
+			justify-content: center
+			a
+				color: rgb(7, 7, 22) !important
+				font-family: Roboto-Light
+				font-size: 15px
+				font-weight: 400
+		&_semiMain
+			margin: 27px 27px
+			display: flex
+			gap: 2vw
+			justify-content: center
+			a
+				color: rgb(153, 153, 153)
+				font-family: Roboto-Light
+				font-size: 11px
+				font-weight: 400
+		&_lastMain
+			a
+				color: rgb(31, 186, 214)
+				font-family: Roboto-Regular
+				font-size: 11px
+				font-weight: 400
+	&_app_store
+		margin: 51px 0 73px 23px
+
+@import "media"
